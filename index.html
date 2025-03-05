@@ -1,18 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleCam.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styleCam.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap");
+    </style>
     <title>Document</title>
-</head>
-<body>
-    <div style="text-align: center;">
-        <h1>You're the fkn best</h1>
-        <h1 class="hisname">Cameron Jon Lawrence</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Zfp3KfYH0xA?si=R1MhpAXUnZXUO2Ud" frameborder="0" allowfullscreen></iframe>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <h1 class="bigHead">BEST BOYFRIEND AWARD</h1>
+      <!-- <p class="ptag">PROUDLY PRESENTED TO</p> -->
+      <p class="ptag">proudly presented to</p>
+      <h1 class="hisName">Cameron Jon Lawrence</h1>
     </div>
-    
-</body>
+    <div class="hisSong">
+      <audio id="background-audio" preload="auto" loop="loop">
+        <source src="./bestieverhad.mp3" type="audio/mpeg" />
+        <!-- <source src="./forCammy/bestieverhad.mp3" type="audio/mpeg" /> -->
+      </audio>
+      <button onClick="togglePlay()" class="button-56" role="button">
+        Claim Reward
+      </button>
+    </div>
+    <div class="desctext">
+      <p>I got lucky finding you 🌏 ❤️</p>
+      <p>You deserve to be adored, not for a moment, but for a lifetime.</p>
+      <p id="rewardText"></p>
+      <!-- <p>CAMERON I LOVE YOU FOREVER AND BEYOND :)</p> -->
+    </div>
+
+    <script>
+      var myAudio = document.getElementById("background-audio");
+      var isPlaying = false;
+
+      function togglePlay() {
+        if (isPlaying) {
+          myAudio.pause();
+          document.getElementById("rewardText").textContent = '';
+        } else {
+          myAudio.play();
+          document.getElementById("rewardText").textContent = 'CAMERON I LOVE YOU FOREVER AND BEYOND :)';
+        }
+      }
+      myAudio.onplaying = function () {
+        isPlaying = true;
+      };
+      myAudio.onpause = function () {
+        isPlaying = false;
+      };
+    </script>
+  </body>
 </html>
